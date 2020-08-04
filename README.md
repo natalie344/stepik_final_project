@@ -1,2 +1,2 @@
 # stepik_final_project
-final project for stepic
+final project for stepik
