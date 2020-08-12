@@ -28,7 +28,7 @@ class ProductPage(BasePage):
         messages_price = self.browser.find_element(*ProductPageLocators.MESSAGE_PRICE).text
         assert name == messages_book, "Book's title is wrong"
         assert price == messages_price, "Price is wrong"
-        # time.sleep(10)
+        time.sleep(10)
     
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
