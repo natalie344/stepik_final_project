@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from selenium.webdriver.common.by import By
 from .locators import LoginPageLocators
+import time
 
 
 class LoginPage(BasePage):
@@ -21,3 +22,15 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         # проверкa, что есть форма регистрации на странице
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Registeration form is not presented"
+
+    def register_new_user(self, email, password):
+        #регистрация пользователя
+        input_email = self.browser.find_element(*LoginPageLocators.REGISTER_EMAIL)
+        input_email.send_keys(email)
+        input_pass1 = self.browser.find_element(*LoginPageLocators.REGISTER_PASS1)
+        input_pass1.send_keys(password)
+        input_pass2 = self.browser.find_element(*LoginPageLocators.REGISTER_PASS2)
+        input_pass2.send_keys(password)
+        button = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
+        button.click()
+

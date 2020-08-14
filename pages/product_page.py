@@ -23,7 +23,7 @@ class ProductPage(BasePage):
         name = self.browser.find_element(*ProductPageLocators.NAME).text
         button = self.browser.find_element(*ProductPageLocators.ADD_FORM)
         button.click()
-        self.solve_quiz_and_get_code()
+        self.solve_quiz_and_get_code()         #для получения кода в промоакциях
         messages_book = self.browser.find_element(*ProductPageLocators.MESSAGE_BOOK).text
         messages_price = self.browser.find_element(*ProductPageLocators.MESSAGE_PRICE).text
         assert name == messages_book, "Book's title is wrong"
