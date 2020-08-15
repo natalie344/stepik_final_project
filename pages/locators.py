@@ -20,7 +20,7 @@ class LoginPageLocators():
 class ProductPageLocators():
     ADD_FORM = (By.CSS_SELECTOR, "#add_to_basket_form")
     REVIEW = (By.CSS_SELECTOR, "#write_review")
-    NAME = (By.CSS_SELECTOR,"#content_inner h1")
+    NAME = (By.CSS_SELECTOR, "#content_inner h1")
     PRICE = (By.CSS_SELECTOR, "#content_inner p.price_color")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div.alert-success")
     MESSAGE_BOOK = (By.CSS_SELECTOR, "#messages div.alert-success div.alertinner strong")
@@ -30,4 +30,3 @@ class BasketPageLocators():
     BOOKS = (By.CSS_SELECTOR, "#basket_formset")
     MESSAGE = (By.CSS_SELECTOR, "#content_inner p")
     SHOPING = (By.CSS_SELECTOR, "#content_inner a")
-

@@ -1,8 +1,8 @@
+import pytest
+
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
-import time
-import pytest
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
@@ -25,8 +25,6 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page = MainPage(browser, link)
     page.open()
     page.go_to_basket()
-    basket_page = BasketPage(browser,browser.current_url)
-    #time.sleep(30)
+    basket_page = BasketPage(browser, browser.current_url)
     basket_page.should_be_basket_empty()
     basket_page.should_be_message()
-     
